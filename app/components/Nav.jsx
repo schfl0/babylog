@@ -23,7 +23,7 @@ export default function Nav() {
       </NavLink>
       {session && (
         <form
-          action="http://localhost:3000/api/auth/signout"
+          action="https://babylog.fl0dev.net/api/auth/signout"
           method="POST"
           className="ml-auto"
         >
