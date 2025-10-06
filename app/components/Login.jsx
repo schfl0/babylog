@@ -6,7 +6,7 @@ export default function Login() {
     <div className="flex w-full max-w-md flex-1 flex-col items-center justify-center self-center">
       <form
         className="w-full"
-        action="http://localhost:3000/api/auth/signin/google"
+        action="https://babylog.fl0dev.net/api/auth/signin/google"
         method="POST"
       >
         <input
