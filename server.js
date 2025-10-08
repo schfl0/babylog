@@ -19,6 +19,10 @@ app.disable("x-powered-by");
 
 // Custom server stuff
 app.use(currentSession);
+app.use((req, res, next) => {
+  console.log("🔹 Pre-SSR locals:", res.locals);
+  next();
+});
 app.use("/api/auth/", ExpressAuth(authConfig));
 
 if (DEVELOPMENT) {
