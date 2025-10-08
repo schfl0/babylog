@@ -12,8 +12,9 @@ export async function authenticatedUser(req, res, next) {
 }
 
 export async function currentSession(req, res, next) {
-  const session = (await getSession(req, authConfig)) ?? undefined;
-  console.log("req", req.cookies)
+  const cookieHeader = req.headers.cookie ?? "";
+  const session = (await getSession({ ...req, headers: { cookie: cookieHeader } }, authConfig)) ?? undefined;
+  console.log("cookieHeader:", cookieHeader)
   console.log("Middleware Session:", session)
   res.locals.session = session;
   return next();
