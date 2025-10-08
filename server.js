@@ -6,7 +6,6 @@ import { currentSession } from "./authMiddleware.js";
 import { authConfig } from "./auth.js";
 import mongoClientPromise from "./mongodb.server.js";
 import bcrypt from "bcrypt";
-import cookieParser from "cookie-parser";
 
 // Short-circuit the type-checking of the built output.
 const BUILD_PATH = "./build/server/index.js";
@@ -19,7 +18,6 @@ app.use(compression());
 app.disable("x-powered-by");
 
 // Custom server stuff
-app.use(cookieParser);
 app.use(currentSession);
 app.use((req, res, next) => {
   console.log("🔹 Pre-SSR locals:", res.locals);
