@@ -27,7 +27,7 @@ app.use("/api/auth/", ExpressAuth(authConfig));
 
 app.get("/api/debug-session", (req, res) => {
   console.log("Req:", req.res)
-  res.json({ session: "Yeh" });
+  res.json({ session: "Ho"})
 });
 
 if (DEVELOPMENT) {
