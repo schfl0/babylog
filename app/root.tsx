@@ -1,4 +1,4 @@
-import {
+#import {
   isRouteErrorResponse,
   Links,
   Meta,
@@ -45,7 +45,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export async function loader({ request, context }) {
-  const resCsrfToken = await fetch("https://babylog.fl0dev.net/api/auth/csrf", {
+  const resCsrfToken = await fetch("http://localhost:3000/api/auth/csrf", {
     headers: {
       Cookie: request.headers.get("Cookie") ?? "",
     },
