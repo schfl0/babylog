@@ -11,7 +11,7 @@ const [csrfToken, setCsrfToken] = useState("")
       setCsrfToken(data.csrfToken);
     })()
   }, [])
-
+console.log(csrfToken);
 if(!csrfToken){
   return <div>Loading...</div>
 }
