@@ -9,7 +9,7 @@ export function meta({}) {
   ];
 }
 
-export async function loader({ context }) {
+export async function loader({ request }) {
   const { getLoggers, getRunningNap } = await import("loaders.server.js");
   const res = await fetch("https://babylog.fl0dev.net/api/auth/session", {
     headers: {
