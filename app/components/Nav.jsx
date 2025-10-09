@@ -1,8 +1,11 @@
 import { NavLink } from "react-router";
 import { useEffect, useState } from "react";
+import { useSession } from "../sessionContext";
+
+
 
 export default function Nav() {
-
+const {session} = useSession();
   const [csrfToken, setCsrfToken] = useState("")
 
   useEffect(()=> {
