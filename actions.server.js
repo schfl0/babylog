@@ -76,3 +76,10 @@ export async function logNap(email, triggerNap) {
   }
   return { error: "Unknown trigger" };
 }
+
+export async function logMed(email, med, g, date) {
+  const client = await mongoClientPromise;
+  const db = client.db();
+
+  const res = await db.collection("meds").insertOne({ email, med, g, date });
+}
