@@ -4,7 +4,7 @@ export default function Login() {
 
 const [csrfToken, setCsrfToken] = useState("")
 
-  useEffect({
+  useEffect(()=> {
     (async()=>{
       const res = await fetch("/api/auth/csrf", {credentials: "include"});
       const data = await res.json();
