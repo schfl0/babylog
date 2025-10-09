@@ -44,26 +44,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export async function loader({ request, context }) {
-  const url = new URL(request.url);
-  const baseUrl = `${url.protocol}//${url.host}`;
-  console.log("URL:", url);
-  console.log("BASEURL:", baseUrl);
-  const resCsrfToken = await fetch(`${baseUrl}/api/auth/csrf`, {
+export async function loader({ request }) {
+  const res = await fetch("https://babylog.fl0dev.net/api/auth/session, {
     headers: {
       Cookie: request.headers.get("Cookie") ?? "",
     },
     credentials: "include",
   });
-  const csrfToken = await resCsrfToken.json();
-  return { session: context.session, csrfToken };
+  const data = await res.json();
+console.log("DATA:", data)
+  return { session: data };
 }
 
 export default function App({ loaderData }) {
-  const { session, csrfToken } = loaderData;
-  console.log("APP CSRF:", csrfToken);
+  const { session } = loaderData;
   return (
-    <SessionProvider value={{ session, csrfToken }}>
+    <SessionProvider value={{ session }>
       <div className="mx-auto max-w-sm rounded-lg bg-white p-4 shadow-md">
         <Nav />
         <Outlet />
