@@ -2,7 +2,7 @@ import { redirect } from "react-router";
 import { logBottle } from "../../actions.server.js";
 
 export async function action({ request }) {
-  if (!context?.session?.user) throw redirect("/");
+ // if (!context?.session?.user) throw redirect("/");
   const resSession = await fetch("https://babylog.fl0dev.net/api/auth/session", {
     headers: {
       Cookie: request.headers.get("Cookie") ?? "",
