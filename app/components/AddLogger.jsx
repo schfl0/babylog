@@ -4,7 +4,7 @@ import { useFetcher } from "react-router";
 
 export default function AddLogger() {
   const fetcher = useFetcher();
-  const options = ["bottle", "nap", "food", "temp"];
+  const options = ["bottle", "nap", "food", "temp", "med"];
   const [selectedLogger, setSelectedLogger] = useState(options[0]);
 
   useEffect(() => {
