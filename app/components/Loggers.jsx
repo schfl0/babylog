@@ -2,6 +2,7 @@ import BottleLogger from "../components/BottleLogger";
 import NapLogger from "../components/NapLogger";
 import FoodLogger from "../components/FoodLogger";
 import TempLogger from "../components/TempLogger";
+import MedLogger from "../components/MedLogger";
 
 export default function Loggers({ session, loggers, openNap }) {
   const loggerComponents = {
@@ -9,6 +10,7 @@ export default function Loggers({ session, loggers, openNap }) {
     nap: NapLogger,
     food: FoodLogger,
     temp: TempLogger,
+    med: MedLogger,
   };
 
   return (
