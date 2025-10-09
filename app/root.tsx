@@ -45,7 +45,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export async function loader({ request, context }) {
-  const resCsrfToken = await fetch("/api/auth/csrf", {
+  const url = new URL(request.url);
+  const baseUrl = '${url.protocol}//${url.host}';
+  console.log("URL:", url);
+  console.log("BASEURL:", baseUrl);
+  const resCsrfToken = await fetch('${baseUrl}/api/auth/csrf', {
     headers: {
       Cookie: request.headers.get("Cookie") ?? "",
     },
