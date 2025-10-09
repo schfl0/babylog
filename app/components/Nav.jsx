@@ -33,7 +33,7 @@ const {session} = useSession();
       >
         📝 Logs
       </NavLink>
-      {session && csrfToken (
+      {session && csrfToken && (
         <form
           action="https://babylog.fl0dev.net/api/auth/signout"
           method="POST"
