@@ -1,7 +1,7 @@
 import { useFetcher } from "react-router";
 import { useState, useEffect } from "react";
 
-export default function FoodLogger({ session, logger }) {
+export default function MedLogger({ session, logger }) {
   const fetcher = useFetcher();
   const [inputMed, setInputMed] = useState("");
   const [inputG, setInputG] = useState("");
