@@ -61,6 +61,7 @@ export async function loader({ request, context }) {
 
 export default function App({ loaderData }) {
   const { session, csrfToken } = loaderData;
+  console.log("APP CSRF:", csrfToken);
   return (
     <SessionProvider value={{ session, csrfToken }}>
       <div className="mx-auto max-w-sm rounded-lg bg-white p-4 shadow-md">
