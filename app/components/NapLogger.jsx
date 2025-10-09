@@ -56,9 +56,10 @@ export default function NapLogger({ session, logger, openNap }) {
             id="triggerNap"
             value={isSleeping ? "stop" : "start"}
           />
-          <p>🏁 Start: {napStart ? `${formatTime(napStart)}` : "--"}</p>
+          <div className="flex itens-center justify-center">
+          <p>🏁 Start: {napStart ? `${formatTime(napStart)}` : "--"}</p><p>/</p>
           <p>⏱️ Nap: {napDuration || "--"}</p>
-        </div>
+        </div></div>
         <button
           type="submit"
           className="mt-2 w-full cursor-pointer bg-blue-200 p-2 transition-all hover:opacity-70"
