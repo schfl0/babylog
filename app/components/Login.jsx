@@ -3,6 +3,11 @@ import { useSession } from "../sessionContext";
 export default function Login() {
   const { csrfToken } = useSession();
   console.log("LOGIN CSRF:", csrfToken);
+
+if(!csrfToken){
+  return <div>Loading...</div>
+}
+  
   return (
     <div className="flex w-full max-w-md flex-1 flex-col items-center justify-center self-center">
       <form
