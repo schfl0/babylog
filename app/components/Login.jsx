@@ -4,7 +4,7 @@ export default function Login() {
   const { csrfToken } = useSession();
   console.log("LOGIN CSRF:", csrfToken);
 
-if(!csrfToken){
+if(!csrfToken.csrfToken){
   return <div>Loading...</div>
 }
   
@@ -18,7 +18,7 @@ if(!csrfToken){
         <input
           type="hidden"
           name="csrfToken"
-          value={csrfToken?.csrfToken || ""}
+          value={csrfToken.csrfToken}
         />
         <button
           className="flex w-full cursor-pointer items-center justify-between border p-2 text-sm transition-all hover:opacity-60"
