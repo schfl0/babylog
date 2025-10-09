@@ -1,11 +1,17 @@
 import { redirect } from "react-router";
 import { deleteLogger } from "../../actions.server.js";
-export async function action({ context, request }) {
-  // const { deleteLogger } = await import("actions.server.js");
+export async function action({ request }) {
+ const resSession = await fetch("https://babylog.fl0dev.net/api/auth/session", {
+    headers: {
+      Cookie: request.headers.get("Cookie") ?? "",
+    },
+    credentials: "include",
+  });
+  const session = await resSession.json();
   const formData = await request.formData();
   const logger = formData.get("deleteLogger");
   const res = await deleteLogger(
-    context.session?.user.email,
+    session?.user.email,
     logger.toLowerCase(),
   );
   return redirect("/");
