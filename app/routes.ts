@@ -8,4 +8,5 @@ export default [
   route("bottle-logger", "./routes/bottleLoggerAction.jsx"),
   route("food-logger", "./routes/foodLoggerAction.jsx"),
   route("nap-logger", "./routes/napLoggerAction.jsx"),
+  route("med-logger", "./routes/medLoggerAction.jsx"),
 ] satisfies RouteConfig;
