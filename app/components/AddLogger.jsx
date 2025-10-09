@@ -34,7 +34,7 @@ export default function AddLogger() {
         type="submit"
         className="bg-pink-600 px-2 py-1 text-sm text-white transition-all hover:opacity-60 cursor-pointer"
       >
-        👍 Add
+        ✅ Add
       </button>
     </fetcher.Form>
   );
