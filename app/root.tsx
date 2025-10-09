@@ -45,7 +45,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export async function loader({ request }) {
-  const res = await fetch("https://babylog.fl0dev.net/api/auth/session, {
+  const res = await fetch("https://babylog.fl0dev.net/api/auth/session", {
     headers: {
       Cookie: request.headers.get("Cookie") ?? "",
     },
