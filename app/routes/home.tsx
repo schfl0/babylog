@@ -10,6 +10,7 @@ export function meta({}) {
 }
 
 export async function loader({ context }) {
+  console.log("Home Context:", context);
   const { getLoggers, getRunningNap } = await import("loaders.server.js");
 
   const loggers = await getLoggers(context.session?.user.email);
