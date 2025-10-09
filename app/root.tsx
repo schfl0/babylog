@@ -53,6 +53,7 @@ export async function loader({ request, context }) {
     headers: {
       Cookie: request.headers.get("Cookie") ?? "",
     },
+    credentials: "include",
   });
   const csrfToken = await resCsrfToken.json();
   return { session: context.session, csrfToken };
