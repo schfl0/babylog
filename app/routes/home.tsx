@@ -10,12 +10,18 @@ export function meta({}) {
 }
 
 export async function loader({ context }) {
-  console.log("Home Context:", context);
   const { getLoggers, getRunningNap } = await import("loaders.server.js");
+  const res = await fetch("https://babylog.fl0dev.net/api/auth/session", {
+    headers: {
+      Cookie: request.headers.get("Cookie") ?? "",
+    },
+    credentials: "include",
+  });
+  const session = await res.json();
 
-  const loggers = await getLoggers(context.session?.user.email);
-  const openNap = await getRunningNap(context.session?.user.email);
-  return { session: context.session, loggers, openNap };
+  const loggers = await getLoggers(session?.user.email);
+  const openNap = await getRunningNap(session?.user.email);
+  return { session, loggers, openNap };
 }
 
 export default function Home({ loaderData }) {
