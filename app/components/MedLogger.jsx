@@ -33,7 +33,7 @@ export default function MedLogger({ session, logger }) {
         <div className="mt-2 mb-2 flex items-center justify-center gap-2">
           <label htmlFor="med">Medication:</label>
           <input
-            className="w- border border-gray-400 px-1 py-0.5"
+            className="w-full border border-gray-400 px-1 py-0.5"
             type="text"
             name="med"
             id="med"
