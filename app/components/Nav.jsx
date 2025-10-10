@@ -16,7 +16,7 @@ const {session} = useSession();
     })()
   }, [])
   return (
-    <nav className="flex items-center gap-6 p-4 text-sm">
+    <nav className="flex items-center gap-2 p-4 text-sm">
       <NavLink
         to="/"
         className={({ isActive }) =>
