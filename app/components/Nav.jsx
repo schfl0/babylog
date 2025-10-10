@@ -35,10 +35,11 @@ const {session} = useSession();
       </NavLink>
       {session && csrfToken && (
         <form
-          action="https://babylog.fl0dev.net/api/auth/signout"
+          action="/api/auth/signout"
           method="POST"
-          className="ml-auto"
+          className="ml-auto flex items-center justify-center gap-4"
         >
+          <img className="h-8 w-8 rounded-full" src={session.user.image} />
           <input
             type="hidden"
             name="csrfToken"
