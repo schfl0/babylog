@@ -17,3 +17,11 @@ export async function getRunningNap(email) {
   });
   return res;
 }
+
+export async function getBottleLogs(email) {
+  const client = await mongoClientPromise;
+  const db = client.db();
+
+  const res = await db.collection("bottles").find({ email }).toArray();
+  return res;
+}
