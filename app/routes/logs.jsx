@@ -24,12 +24,12 @@ const bottleLogs = await getBottleLogs(session.user.email)
 export default function Logs({ loaderData }) {
   const { session, bottleLogs } = loaderData;
   return (
-    <div className="p-4">
+    <div className="p-4 text-sm">
 
-      <h1 className="text-sm font-bold">Bottles</h1>
+      <h1 className="font-bold">Bottles</h1>
       {bottleLogs.length > 0 && (
         bottleLogs.map((bottle, index)=>(
-          <div key={index}>
+          <div className="text-xs" key={index}>
           <p>{bottle.date.toLocaleDateString()}</p>
           <p>{bottle.ml}</p>
         </div>
