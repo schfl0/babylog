@@ -25,9 +25,9 @@ export default function Logs({ loaderData }) {
   const { session, bottleLogs } = loaderData;
   return (
     <div className="p-4">
-      <h1 className="text-2xl">Logs</h1>
-      <p>Bottles:</p>
-      {!bottleLogs.length === 0 && (
+
+      <h1 className="text-sm font-bold">Bottles</h1>
+      {bottleLogs.length > 0 && (
         bottleLogs.map((index, bottle)=>(
           <div key={index}>
           <p>{bottle.date}</p>
