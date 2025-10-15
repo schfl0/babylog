@@ -30,7 +30,7 @@ export default function Logs({ loaderData }) {
       {bottleLogs.length > 0 && (
         bottleLogs.map((bottle, index)=>(
           <div key={index}>
-          <p>{bottle.date}</p>
+          <p>{bottle.date.toLocaleDateString()}</p>
           <p>{bottle.ml}</p>
         </div>
         ))
