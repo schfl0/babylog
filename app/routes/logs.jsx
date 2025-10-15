@@ -28,7 +28,7 @@ export default function Logs({ loaderData }) {
 
       <h1 className="text-sm font-bold">Bottles</h1>
       {bottleLogs.length > 0 && (
-        bottleLogs.map((index, bottle)=>(
+        bottleLogs.map((bottle, index)=>(
           <div key={index}>
           <p>{bottle.date}</p>
           <p>{bottle.ml}</p>
