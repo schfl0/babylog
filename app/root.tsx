@@ -13,6 +13,8 @@ import "./app.css";
 import { SessionProvider } from "./sessionContext";
 import Nav from "../app/components/Nav.jsx";
 
+import { APP_ORIGIN} from "../config";
+
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
