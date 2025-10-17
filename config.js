@@ -4,5 +4,5 @@ export function buildUrl(path){
   if(/^https?:\/\//.test(path)) return path;
   if(path.startsWith("/")) path = path.slice(1);
 
-  return ´${APP_ORIGIN}/${path}´
+  return `${APP_ORIGIN}/${path}`
 }
