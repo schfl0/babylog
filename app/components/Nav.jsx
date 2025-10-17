@@ -5,7 +5,7 @@ import { useSession } from "../sessionContext";
 import {APP_ORIGIN} from "../../config";
 console.log("WINDOW:", typeof window);
 console.log("NAV APP ORIGIN:", APP_ORIGIN);
-if (window !== "undefined") console.log("WINDOW LOCATION:", window.location);
+if (typeof window !== "undefined") console.log("WINDOW LOCATION:", window.location);
 
 export default function Nav() {
 const {session} = useSession();
