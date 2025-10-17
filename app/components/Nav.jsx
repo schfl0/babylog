@@ -2,6 +2,10 @@ import { NavLink } from "react-router";
 import { useEffect, useState } from "react";
 import { useSession } from "../sessionContext";
 
+import {APP_ORIGIN} from "../../config";
+console.log("WINDOW:", typeof window);
+console.log("NAV APP ORIGIN:", APP_ORIGIN);
+
 
 
 export default function Nav() {
