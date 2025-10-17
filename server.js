@@ -19,16 +19,7 @@ app.disable("x-powered-by");
 
 // Custom server stuff
 app.use(currentSession);
-app.use((req, res, next) => {
-  console.log("🔹 Pre-SSR locals:", res.locals);
-  next();
-});
 app.use("/api/auth/", ExpressAuth(authConfig));
-
-app.get("/api/debug-session", (req, res) => {
-  console.log("Req:", req.res?.locals)
-  res.json({ session: "Ho"})
-});
 
 if (DEVELOPMENT) {
   console.log("Starting development server");

@@ -14,7 +14,7 @@ app.use(
   createRequestHandler({
     build: () => import("virtual:react-router/server-build"),
     getLoadContext(request) {
-      console.log("🔸 SSR getLoadContext locals:", request.res?.locals);
+      
       return {
         session: request.res.locals.session,
       };
