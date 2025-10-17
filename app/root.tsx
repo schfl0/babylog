@@ -14,6 +14,7 @@ import { SessionProvider } from "./sessionContext";
 import Nav from "../app/components/Nav.jsx";
 
 import { APP_ORIGIN} from "../config";
+console.log("APP ORIGIN:", APP_ORIGIN)
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
